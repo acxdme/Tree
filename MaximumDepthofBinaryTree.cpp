@@ -9,20 +9,29 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-// class Solution {
-// private:
-//     int helper(TreeNode* root)
-//     {
-//         if(root==NULL)
-//             return 0;
-//         return  1+ max(helper(root->left),helper(root->right));
-//     }
-// public:
-//     int maxDepth(TreeNode* root) 
-//     {
-//         return helper(root);  
-//     }
-// };
+
+//Method-1  using dfs to calculate The maximum depth , which is the number of nodes along the longest path from the root node down to the farthest leaf node.
+/*
+Time complexity : O(n) tree can be screw
+Space complexity : O(n)
+*/
+class Solution 
+{
+private:
+    int helper(TreeNode* root)
+    {
+        if(root==NULL)
+            return 0;
+        return  1+ max(helper(root->left),helper(root->right));
+    }
+public:
+    int maxDepth(TreeNode* root) 
+    {
+        return helper(root);  
+    }
+};
+
+//Method-2 Using bfs to calculate the
 class Solution{
     
 public :
