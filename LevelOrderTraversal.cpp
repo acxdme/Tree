@@ -38,3 +38,26 @@ public:
         return answer;
     }
 };
+
+/* 
+Below is also a BFS/ Level Order Traversal the difference is that we just have to return a single vector containing the level order
+Time complexity : O(N)
+space complexity : O(N)
+*/
+vector<int> levelOrder(Node* node)
+{
+   vector<int> answer;
+   if(node==NULL)
+     return answer;
+    queue<Node*> q;
+    q.push(node);
+    while(!q.empty())
+    {
+        Node* p=q.front();
+        q.pop();
+        answer.push_back(p->data);
+        if(p->left) q.push(p->left);
+        if(p->right) q.push(p->right);
+    }
+    return answer;
+}
