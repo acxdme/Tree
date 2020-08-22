@@ -5,7 +5,8 @@ Algo  :      Use the BFS using queue to get the nodes at a particular level and 
              level order.( while inserting elements in queue insert the right node then left node).
 
 Note: In the leetcode version of this question we have to return vector<vector<int>> answer so instead of stack store all level order nodes in a vector v and then push v 
-in result and finally return the answer after reversing it.
+in result and finally return the answer after reversing it. 
+Another way to push the vector of integers of a particular level into stack, queue is used to get level order nodes.
 */
 
 #include<bits/stdc++.h>
