@@ -4,6 +4,6 @@
  immediate children.
  The method where we compare  the min and max  values (updated with respect of the whole tree) with the nodes is efficient and good but the range of min and max can create problems.
  
- So the next method is to make a level order traversal of the tree and store the oreder in an array ,  the array must be in ascending order for a tree to be BST.
+ So the next method is to make a In-order traversal of the tree and store the oreder in an array ,  the array must be in ascending order for a tree to be BST.
  
 */
