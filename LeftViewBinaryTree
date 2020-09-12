@@ -1,0 +1,27 @@
+/*
+Time complexity : O(n)
+Space complexity : O(h)
+My approach : this is the dfs approach where the leftmost node is printed.
+*/
+
+void leftView_helper(Node* root, int level, int &lastlevel)
+{
+    if(root==NULL)
+       return ;
+       
+     if(level > lastlevel)
+     {
+         
+         cout<<root->data<<" ";
+         lastlevel= level;
+     }
+     
+     leftView_helper(root->left,level+1,lastlevel);
+     leftView_helper(root->right,level+1,lastlevel);
+     
+}
+void leftView(Node *root)
+{
+   int last_level =0;
+   leftView_helper(root,1,last_level);
+}
