@@ -35,3 +35,30 @@ int diameter(Node* root)
     int height_of_tree = height(root, ans); 
     return ans; 
 } 
+
+
+// another style of writing inspired by aditya verma
+int helper(Node* root, int& result)
+{ 
+    if(root==NULL) return 0;
+    
+    int l = helper(root->left,result);
+    int r = helper(root->right,result);
+    
+    int temp = 1+ max(l,r);
+    
+    int ans =  max(temp,1+l+r);
+    
+    result = max(ans,result);
+    
+    return temp;
+}
+int diameter(Node* node)
+{
+    int  result=INT_MIN;
+    if(node==NULL) return 0;
+    helper(node,result);
+    
+    return result;
+}
+
